@@ -9,18 +9,31 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+    min-height: 100vh;
+}
+
 body {
     /* Cor de fundo da página ↓ */
     background: #ffffff;
     /* Cor padrão do texto ↓ */
     color: #111827;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }
 
 header,
 footer {
+    flex-grow: 0;
     /* Fundo azul escuro ↓ */
     background: #004d7a;
 }
+
 
 h1 {
     /* Tamanho maior para títulos ↓ */
@@ -28,7 +41,7 @@ h1 {
 }
 
 
-img {
+img#squirtle {
     /* Limita largura máxima das imagens ↓ */
-    max-width: 200px;
+    max-width: 100%;
 }
