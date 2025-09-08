@@ -121,7 +121,7 @@
 
 - Servidor nginx: [http://localhost:8080](http://localhost:8080)
 - Documentação da API: [http://localhost:8080/docs](http://localhost:8080/docs)
-- Servidor Vite: [http://localhost:8080](http://localhost:8080)
+- Servidor Vite: [http://localhost:5173](http://localhost:5173)
 
 
 **Importante:** O arquivo `./Insomnia.yml` DEVE ser utilizado no Insomnia para testar as rotas.
