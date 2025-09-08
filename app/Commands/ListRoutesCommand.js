@@ -2,7 +2,7 @@ import Table from 'cli-table3';
 import ListRoutes from '../../Core/ListRoutes.js';
 
 export default {
-    name: 'listar-rotas',
+    name: 'get-routes',
     description: 'Lista todas as rotas do Express com middlewares',
 
     async handle() {

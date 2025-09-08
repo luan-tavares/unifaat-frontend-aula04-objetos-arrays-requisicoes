@@ -115,6 +115,14 @@
    node command seed
    ```
 
+9. Instalar vite globalmente no host e executar (opcional)
+
+   ```sh
+   npm install -g vite
+   ```
+   ```sh
+   vite
+   ```
 ---
 
 ## Acesse <a name="acesse"></a>

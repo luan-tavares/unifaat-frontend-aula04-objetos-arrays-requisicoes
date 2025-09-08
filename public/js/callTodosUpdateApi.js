@@ -1,10 +1,10 @@
 // Exporta a função assíncrona como padrão, recebendo o objeto "data" como parâmetro
-export default async function (data) {
+export default async function (id, data) {
     try {
 
         // Faz uma requisição HTTP POST para a API de "todos"
-        const request = await fetch("http://localhost:8080/api/todos", {
-            method: "POST", // Define o método como POST (criação de recurso)
+        const request = await fetch(`http://localhost:8080/api/todos/${id}`, {
+            method: "PUT", // Define o método como POST (criação de recurso)
             headers: {
                 "Content-Type": "application/json" // Informa que o corpo será em JSON
             },

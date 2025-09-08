@@ -22,13 +22,6 @@ export default (function () {
     // Documentação Swagger
     router.use('/docs', swaggerUi.serve, swaggerUi.setup(swagger));
 
-    router.get('/env', (request, response) => {
-        return response.status(CONSTANTS.HTTP.SUCCESS).json({
-            env: process.env,
-            CONSTANTS: globalThis.CONSTANTS
-        })
-    });
-
     return router;
 
 })();
