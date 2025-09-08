@@ -43,38 +43,37 @@ export default {
     down: async () => {
         await TodoModel.destroy({
             where: {
-                title: {
-                    [Op.in]: [
-                        'Revisar proposta de orçamento',
-                        'Enviar relatório semanal',
-                        'Atualizar perfil no sistema',
-                        'Agendar reunião com cliente',
-                        'Organizar arquivos da equipe',
-                        'Registrar feedback do cliente',
-                        'Cadastrar nova tarefa no CRM',
-                        'Atualizar metas trimestrais',
-                        'Preparar apresentação do projeto',
-                        'Responder e-mails pendentes',
-                        'Fazer backup dos documentos',
-                        'Atualizar planilha financeira',
-                        'Pesquisar fornecedores novos',
-                        'Criar rascunho da campanha de marketing',
-                        'Testar integração com API externa',
-                        'Configurar ambiente de homologação',
-                        'Revisar documentação técnica',
-                        'Elaborar cronograma de tarefas',
-                        'Acompanhar métricas de vendas',
-                        'Treinar equipe em novo processo',
-                        'Analisar contratos vigentes',
-                        'Criar checklist de qualidade',
-                        'Preparar ata da última reunião',
-                        'Atualizar inventário de equipamentos',
-                        'Publicar comunicado interno',
-                        'Agendar treinamento externo',
-                        'Consolidar feedbacks da equipe',
-                        'Monitorar concorrência'
-                    ]
-                }
+                title: [
+                    'Revisar proposta de orçamento',
+                    'Enviar relatório semanal',
+                    'Atualizar perfil no sistema',
+                    'Agendar reunião com cliente',
+                    'Organizar arquivos da equipe',
+                    'Registrar feedback do cliente',
+                    'Cadastrar nova tarefa no CRM',
+                    'Atualizar metas trimestrais',
+                    'Preparar apresentação do projeto',
+                    'Responder e-mails pendentes',
+                    'Fazer backup dos documentos',
+                    'Atualizar planilha financeira',
+                    'Pesquisar fornecedores novos',
+                    'Criar rascunho da campanha de marketing',
+                    'Testar integração com API externa',
+                    'Configurar ambiente de homologação',
+                    'Revisar documentação técnica',
+                    'Elaborar cronograma de tarefas',
+                    'Acompanhar métricas de vendas',
+                    'Treinar equipe em novo processo',
+                    'Analisar contratos vigentes',
+                    'Criar checklist de qualidade',
+                    'Preparar ata da última reunião',
+                    'Atualizar inventário de equipamentos',
+                    'Publicar comunicado interno',
+                    'Agendar treinamento externo',
+                    'Consolidar feedbacks da equipe',
+                    'Monitorar concorrência'
+                ]
+
             }
         });
     }

@@ -1,7 +1,7 @@
 import path from 'path';
-import "./bootstrap/app.js";
-import createCommandManager from './Core/CommandManager.js';
 
+import createCommandManager from './Core/CommandCore/createCommandManager.js';
+import "./bootstrap/app.js";
 import initRelations from "./config/sequelize_relations.js";
 
 (async function () {

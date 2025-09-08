@@ -1,19 +1,13 @@
-import fs from 'fs/promises';
-import path from 'path';
+import getFilesWithContents from '../getFilesWithContents.js';
 
 export default async function (dir, server) {
 
 
-    const files = await fs.readdir(dir);
-    const pathObjects = [];
+    const files = await getFilesWithContents(dir);
 
-    for (const file of files) {
-        if (file.endsWith('.js')) {
-            const fullPath = path.join(dir, file);
-            const module = await import(fullPath);
-            pathObjects.push(module.default);
-        }
-    }
+    const pathObjects = Object.entries(files).map(([file, data]) => {
+        return data;
+    });
 
     const resources = Object.assign({}, ...pathObjects);
 

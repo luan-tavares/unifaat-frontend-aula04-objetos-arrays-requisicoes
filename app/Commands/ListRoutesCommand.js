@@ -1,8 +1,10 @@
 import Table from 'cli-table3';
-import ListRoutes from '../../Core/ListRoutes.js';
+import routes from '../../routes/routes.js';
+import recursiveGetRoutes from '../../Core/RouteCore/recursiveGetRoutes.js';
+import express from 'express';
 
 export default {
-    name: 'get-routes',
+    name: 'routes',
     description: 'Lista todas as rotas do Express com middlewares',
 
     async handle() {
@@ -13,7 +15,11 @@ export default {
             colWidths: [10, 60]
         });
 
-        const routeList = ListRoutes();
+        const app = express();
+
+        app.use("/", routes);
+
+        const routeList = recursiveGetRoutes(app._router.stack);
 
         if (routeList.length === 0) {
             console.log('⚠️ Nenhuma rota registrada.');
