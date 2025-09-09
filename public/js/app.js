@@ -38,24 +38,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     // Limpa as opções existentes no select de usuários
     selectUsersElement.innerHTML = "";
 
-    // Cria a opção padrão "Selecione"
-    const defaultOptionElement = document.createElement("option");
-    defaultOptionElement.value = "";
-    defaultOptionElement.innerText = "Selecione";
-
-    // Adiciona a opção padrão ao select
-    selectUsersElement.append(defaultOptionElement);
-
-    // Extrai as linhas (usuários) retornadas da API
-    const userRows = response.rows;
-
-    // Para cada usuário retornado, cria uma opção no select
-    userRows.forEach((row) => {
-        const optionElement = document.createElement("option");
-        optionElement.value = row.id;     // Define o valor da opção como o ID do usuário
-        optionElement.innerText = row.name; // Define o texto visível como o nome do usuário
-        selectUsersElement.append(optionElement); // Adiciona a opção ao select
-    });
+    /** lOGICA OPTIONS */
 
     // Adiciona um listener para o evento de "submit" do formulário
     formAddElement.addEventListener("submit", async (event) => {
@@ -68,48 +51,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         // Array para guardar mensagens de erro de validação
         const errors = [];
 
-        // Valida se o título foi preenchido
-        if (inputTitleElement.value == "") {
-            inputTitleElement.focus(); // Dá foco no campo
-            errors.push("Campo Título não pode ser vazio."); // Adiciona mensagem de erro
-        }
-
-        // Valida se um usuário foi selecionado
-        if (selectUsersElement.value == "") {
-            errors.push("Escolha um usuário.");
-        }
-
-        // Limpa mensagens anteriores de erro
-        errorsElement.innerHTML = "";
-        errorsElement.classList.add("d-none"); // Esconde a área de erros
-
-        // Se houver erros de validação, mostra-os e encerra
-        if (errors.length > 0) {
-            errorsElement.classList.remove("d-none");
-            errors.forEach((errorText) => {
-                const divElement = document.createElement("div");
-                divElement.innerText = errorText; // Adiciona o texto do erro
-                errorsElement.append(divElement); // Exibe no container de erros
-            });
-            return; // Interrompe a execução
-        }
-
-        // Preenche o objeto de dados com título e usuário
-        data.title = inputTitleElement.value;
-        data.id_user = selectUsersElement.value;
-
-        // Apenas loga no console os dados que serão enviados
-        console.log(data);
-
-        // Limpa o campo de título e reseta o select de usuário
-        inputTitleElement.value = "";
-        selectUsersElement.value = "";
-
-        // Faz a chamada à API para inserir o novo "todo"
-        const response = await callTodosInsertApi(data);
-
-        // Atualiza a lista de "todos" renderizados
-        renderAll();
+        /** LOGICA INSERT */
     })
 
 });
