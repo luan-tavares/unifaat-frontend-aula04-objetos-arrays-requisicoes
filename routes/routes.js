@@ -18,7 +18,7 @@ export default (function () {
     router.use(fileUpload());
 
     // Apis
-    router.use('/api', CorsMiddleware, api);
+    router.use('/api', /*CorsMiddleware,*/ api);
 
     ////
     router.use('/', web);
