@@ -433,7 +433,7 @@ docs/
 |-------------------------|-----------------------------------------|------------------------------------------------------------------------|-------|
 | `nodeweb-container`     | `docker/node24-web/Dockerfile.dev`        | API HTTP principal (`server.js`). | 3000 |
 | `nodecli-container`     | `docker/node24-cli/Dockerfile`            | Executa comandos como `migrate`, `seed`, `dispatch`. Container efêmero. | - |
-| `nodevite-container`     | `docker/node24-vite/Dockerfile`            | Servidor HRM Vite | - |
+| `nodevite-container`     | `docker/node24-vite/Dockerfile`            | Servidor HRM Vite | 5173 |
 
 ### 🗄️ Containers de Infraestrutura
 
@@ -463,4 +463,4 @@ app-network
 |-------------|----------------|----------------|-------------------------------------|
 | NGINX       | 80             | **8080**       | http://localhost:8080               |
 | PostgreSQL  | 5432           | **6789**       | usado por clients (beekeeper, dbeaver, ...)/ORM/CLI               |
-| Node Vite    | 5173    | **51732** | http://localhost:5173  |
+| Node Vite    | 5173    | **5173** | http://localhost:5173  |
